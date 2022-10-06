@@ -1,0 +1,43 @@
+<!DOCYPTwE HTML>
+<html>
+<head>
+<style>
+#div1, #div2 {
+  float: left;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+</style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body bgcolor="lightyellow">
+
+<h2 align="center" style="font-family: algerian;font-size: 50px;color: silver;">Drag and Drop</h2>
+<p align="center" style="font-family: joker;font-size: 30px;color: goldenrod;">Pick This Logo And Put In Second Element Box</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color: cyan;width: 300px;height: 300px;border-radius: 1000px;text-align: center;margin-left: 300px;margin-top: 100px;cursor: move;border: 2px dashed lightgoldenrodyellow;">
+  <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjOrtzaqnxte7cFwCa3BNadd_AkmeAhCtCdNT4FtJiOQAoTFeQn06_mroYaiWgD02VS7t3gdtvtKOOqIVmfnrpOj0vIDp0EWLg5HDxO1-zv1ZF_kfxja1_8t8HpI69dZ8fV6tTscgHq5D8_XSXeRNMlI8ErR_NqFjqsKmbFs7XzND6O4NBfckt2IiPb=s257" draggable="true" ondragstart="drag(event)" id="drag1" width="200" height="200" style="padding-top: 50px;">
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color: lightcyan;width: 300px;height: 300px;border-radius: 1000px;text-align: center;margin-top: 100px;cursor: move;border: 2px dashed goldenrod;"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h1 align="center" style="color:royalblue;font-family: sans-serif;">Created By Coder Savio</h1>
+</body>
+</html>
+
